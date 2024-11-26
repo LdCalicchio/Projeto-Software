@@ -1,0 +1,130 @@
+/* Estilo geral */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fonte mais moderna */
+    background-image: url('https://cdn.gencraft.com/prod/user/8190c00a-105a-486f-a2e3-dc928bd2077e/0094280f-c304-4b7c-9731-35aee928c57c/image/image1_0.jpg?Expires=1740435644&Signature=Wm3mjOvATEuhkvKLYeO1p9KBH6kecElMUhaEWayjvKidgOfamuwHKzYAINDyahRk3A6ROX~LuKRuu27ECDUt3wZmveC8iUAmEsql2dzzswakfh6UpVFCjwx3DhrEeDzoPaFWTt6N6RZeoWh88e8TGcVAU0WUBPq8oh18tnd1~jV~CaGR~6jrgY4rcT8oJsedNdZxM5UAGAujVfRSPwnXOtM8rjQqCcsE2WnPIm5y98bPYtZZvnIzSB3nzsvipi~ABakAhwaL5KcyzBI9mVfORB2RLLgxylk5FM~XEQQETPfA5rbDwZhzP4hUmH7bcnayQ29C5R7oenj10vWrTfkX~w__&Key-Pair-Id=K3RDDB1TZ8BHT8'); /* URL da imagem de fundo */
+    background-size: cover; /* Redimensiona a imagem para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-attachment: fixed; /* Fixa a imagem de fundo durante a rolagem */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container geral */
+.container, .form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparência no fundo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 10px auto; /* Move a caixa de texto alguns pixels para cima */
+}
+
+/* Título */
+h1, h2 {
+    color: #007bb5; /* Ajuste para azul escuro */
+    text-align: center;
+    font-weight: bold; /* Negrito */
+    font-size: 2em; /* Tamanho da letra aumentado */
+}
+
+/* Parágrafo */
+p {
+    font-size: 20px; /* Tamanho da letra aumentado */
+    font-weight: bold; /* Negrito */
+    margin: 10px 0;
+}
+
+/* Botões e links */
+.btn, a, button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bb5; /* Ajuste para azul escuro */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 18px; /* Aumentar o tamanho da letra */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover, a:hover, button:hover {
+    background-color: #005f8d; /* Ajuste para azul ainda mais escuro */
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Ajusta a largura para caber no container */
+}
+
+/* Estilo para as caixas de opções */
+.option-box {
+    background-color: rgba(0, 123, 181, 0.8);
+    color: white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Estilo para o botão de logout */
+.logout-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #007bb5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #005f8d;
+}
+
+/* Estilo para o botão de alterar senha */
+.change-password-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007bb5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.change-password-button:hover {
+    background-color: #005f8d;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração de Senha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        async function alterarSenha(event) {
+            event.preventDefault();
+            const senhaAtual = document.getElementById('senhaAtual').value;
+            const novaSenha = document.getElementById('novaSenha').value;
+            const confirmaSenha = document.getElementById('confirmaSenha').value;
+            const response = await fetch('/alterar_senha', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ senhaAtual, novaSenha, confirmaSenha })
+            });
+            const result = await response.json();
+            if (response.ok) {
+                alert('Senha alterada com sucesso!');
+                window.location.href = "/log_sucesso";
+            } else {
+                alert(result.message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Alteração de Senha</h2>
+        <form onsubmit="alterarSenha(event)">
+            <input type="password" id="senhaAtual" placeholder="Senha Atual" required>
+            <input type="password" id="novaSenha" placeholder="Nova Senha" required>
+            <input type="password" id="confirmaSenha" placeholder="Confirme a Senha" required>
+            <button type="submit">Mudar a senha</button>
+        </form>
+    </div>
+</body>
+</html>

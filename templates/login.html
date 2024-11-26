@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETWATCH - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        async function login(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, senha })
+            });
+            const result = await response.json();
+            if (response.ok) {
+                window.location.href = "/log_sucesso";
+            } else {
+                alert(result.message);
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const senha = document.getElementById('senha');
+            const checkbox = document.getElementById('togglePassword');
+            if (checkbox.checked) {
+                senha.type = 'text';
+            } else {
+                senha.type = 'password';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Login</h2>
+        <form onsubmit="login(event)">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <label>
+                <input type="checkbox" id="togglePassword" onclick="togglePasswordVisibility()"> Mostrar senha
+            </label>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
